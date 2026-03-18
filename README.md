@@ -20,7 +20,23 @@ A Model Context Protocol (MCP) server that enables remote access to [OpenCode](h
 ## Requirements
 
 - Python 3.12+
-- A running [OpenCode](https://opencode.ai) instance
+- [OpenCode](https://opencode.ai) running in **serve mode**
+
+### OpenCode Serve Mode
+
+This MCP server requires OpenCode to be running in serve mode with API enabled:
+
+```bash
+opencode --serve
+```
+
+Or with custom port and password:
+
+```bash
+opencode --serve --port 4096 --password your_password
+```
+
+Make sure `OPENCODE_URL` and `OPENCODE_SERVER_PASSWORD` in your `.env` match the serve command.
 
 ## Installation
 
@@ -73,9 +89,9 @@ Output:
 
 ```
 =========================================
-🚀 OpenCode MCP Server 已启动 (终极生产版)
-🎯 目标节点: http://127.0.0.1:4096
-⏱️ 任务超时时间: 60 秒
+🚀 OpenCode MCP Server started
+🎯 Target: http://127.0.0.1:4096
+⏱️ Task timeout: 60 seconds
 🔗 SSE URL:  http://127.0.0.1:14962/sse
 =========================================
 ```
